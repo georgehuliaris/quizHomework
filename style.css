@@ -1,7 +1,22 @@
 /* make it look pretty */
 :root {
     background-color: black;
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
 }
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
 
 * {
     box-sizing: border-box;
@@ -30,12 +45,15 @@ p {
 
 .container {
     padding-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: fit-content;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -75,6 +93,12 @@ text-center {
 
 .btn:hover {
     box-shadow: 0 0.4rem 2.4rem 0 white;
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
 }
 
 /* end page */
@@ -124,10 +148,6 @@ input::placeholder {
     margin-bottom: .4rem;
 }
 
-body {
-    color: lightgray;
-}
-
 .p {
     text-align: center;
     color: lightgrey;
@@ -165,11 +185,11 @@ body {
     width: 100%;
 }
 
-.correct {
+body.correct {
     background: linear-gradient(32 deg lightgreen, green 100%);
 }
 
-.incorrect {
+body.wrong {
     background: linear-gradient(32 deg tomato, red 100%);
 }
 
