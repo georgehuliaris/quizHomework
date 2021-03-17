@@ -46,6 +46,7 @@ p {
 .container {
     padding-top: 20px;
     padding: 10px;
+    box-shadow: 0 0 10px 2px;
     background-color: white;
     border-radius: 5px;
     width: 100vw;
@@ -91,6 +92,22 @@ text-center {
     border-radius: 4px;
 }
 
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
 .btn:hover {
     box-shadow: 0 0.4rem 2.4rem 0 white;
 }
@@ -101,24 +118,17 @@ text-center {
     padding: 10px 20px;
 }
 
-/* end page */
-
-.end-form-container {
-    width: 100%;
+.controls {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    max-width: 30rem;
 }
 
-input {
-    margin-bottom: 1rem;
-    width: 20rem;
-    padding: 1.5rem;
-    font-size: 1.8rem;
-    border: none;
-    box-shadow: 0 0.1rem 1.4rem 0 yellowgreen;
+.hide {
+    display: none;
 }
+
+
 
 input::placeholder {
     color: lightgray;
@@ -128,15 +138,7 @@ input::placeholder {
     width: 100%;
     outline: none;
 }
-#end-text {
-    font-size: 2.4rem;
-    color: white;
-    text-align: center;
-}
 
-#saveScoreBtn {
-    border: none;
-}
 
 #highScoresList {
     list-style: none;
@@ -180,10 +182,7 @@ input::placeholder {
     font-size: large;
 }
 
-.choice-text {
-    padding: 2rem;
-    width: 100%;
-}
+
 
 body.correct {
     background: linear-gradient(32 deg lightgreen, green 100%);
@@ -193,35 +192,11 @@ body.wrong {
     background: linear-gradient(32 deg tomato, red 100%);
 }
 
-#hud {
-    display: flex;
-    justify-content: space-between;
-}
 
-.hud-prefix {
-    text-align: center;
-    font-size: 2rem;
-}
 
-.hud-text-main {
-    text-align: center;
-}
 
-#progressBar {
-    width: 20rem;
-    height: 3rem;
-    border: 0.2rem solid greenyellow;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border-radius: 50px;
-    overflow: hidden;
-}
 
-#progressBarFull {
-    height: 100%;
-    background: greenyellow;
-    width: 0%;
-}
+
 
 @media screen and (max-width: 768px) {
     .choice-container {
